@@ -8,13 +8,16 @@ First, add the following type signature:
 word_lengths : List String -> List Nat
 ```
 
-Then move the point to the function name and press `C-c C-s` to call `idris-add-clause`, which will start an inferior Idris process (as needed) and generate the following:
+Then move the point to the function name and press `C-c C-s`
+to call `idris-add-clause`, which will start an inferior Idris process
+(as needed) and generate the following:
 
 ``` idris
 word_lengths xs = ?word_lengths_rhs
 ```
 
-If you move the point to `?word_lengths_rhs` and press `C-c C-t`, i.e. `idris-type-at-point`, it will tell you:
+If you move the point to `?word_lengths_rhs` and press `C-c C-t`, i.e.
+`idris-type-at-point`, it will tell you:
 
 ``` idris
   xs : List String
@@ -49,7 +52,8 @@ The case when the input is empty is trivial:
 word_lengths [] = []
 ```
 
-Then we can rename `x` and `xs` to the more descriptive `word` and `words` and use another hole for the sake of example:
+Then we can rename `x` and `xs` to the more descriptive `word` and `words`
+and use another hole for the sake of example:
 
 ``` idris
 word_lengths (word :: words) = length word :: ?rest

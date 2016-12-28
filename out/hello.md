@@ -13,7 +13,8 @@ Add a hole to stand in place of a conversion.
 main = putStrLn (?convert 'x')
 ```
 
-An appropriate `Char -> String` function to fill the `convert` hole is [`cast`](http://www.idris-lang.org/docs/current/prelude_doc/docs/Prelude.Cast.html#Prelude.Cast.cast).
+An appropriate `Char -> String` function to fill the `convert` hole is
+[`cast`](http://www.idris-lang.org/docs/current/prelude_doc/docs/Prelude.Cast.html#Prelude.Cast.cast).
 
 ```idris
 main = putStrLn (cast 'x')
