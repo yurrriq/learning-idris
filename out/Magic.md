@@ -192,6 +192,25 @@ mapPreservesLen = %runElab mush
 
     a -> b is not an inductive family
 
+Thanks to @Melvar on IRC, I learned that error message basically says, "I can't
+generate an induction principle for `f`, because it's a function, not data."
+
+An *inductive family* is the formal name for what you define with a data
+declaration.
+
+The solution then is to put `f` on the left-hand side, so we do induction on
+`l`, which, unlike `f`, **is** an *inductive family*. 😄
+
+[Looking back at the video](https://youtu.be/pqFgYCdiYz4?t=15m30s) after a few
+hours of sleep, @david-christiansen indeed put `f` on the left-hand side and I
+previously made a typo.
+
+```idris
+mapPreservesLen : (f : a -> b) -> (l : List a) ->
+                  length (map f l) = length l
+mapPreservesLen f = %runElab mush
+```
+
 ### Prelude.List.lengthAppend
 
 ``` idris
